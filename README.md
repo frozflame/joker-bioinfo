@@ -1,4 +1,4 @@
-Joker-Example
+Joker-Bioinfo
 -------------
 
-
+Simple bioinfo utils.
