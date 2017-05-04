@@ -27,7 +27,8 @@ revcompl_dna = {
     'id': 'revcompl_dna',
     'src': 'MNHKDGABCXYTUWRS-.mnhkdgabcxytuwrs',
     'dst': 'KNDMHCTVGXRAAWYS-.kndmhctvgxraawys',
-    'outlier':  '-',
+    'outlier': '-',
+    'reverse': True,
 }
 
 # reverse complementary RNA
@@ -35,7 +36,8 @@ revcompl_rna = {
     'id': 'revcompl_rna',
     'src': 'MNHKDGABCXYTUWRS-.mnhkdgabcxytuwrs',
     'dst': 'KNDMHCUVGXRAAWYS-.kndmhcuvgxraawys',
-    'outlier':  '-',
+    'outlier': '-',
+    'reverse': True,
 }
 
 
@@ -44,7 +46,7 @@ class Transcoder(object):
 
     def __init__(self, **params):
         self.refarr = self._build_mapping_array(**params)
-        self.reverse = params.get('reverse', 'False')
+        self.reverse = params.get('reverse', False)
         self._loaded_transcoders[params.get('id')] = self
 
     @classmethod
