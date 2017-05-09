@@ -114,7 +114,7 @@ class CodonTable(object):
         path = os.path.join(path, 'kb/transl_tabs.txt')
         for text in open(path).read().split('==SEPARATOR=='):
             transl_dic = cls.parse_ncbi_format(text)
-            cls._loaded_tables[transl_dic.get('id')] = cls(**transl_dic)
+            cls._loaded_tables[transl_dic.get('tid')] = cls(**transl_dic)
 
     @classmethod
     def from_ncbi_format(cls, text):
@@ -155,9 +155,9 @@ class CodonTable(object):
         }    
         """
         d = dict()
-        ret = dict(id=0, title='')
+        ret = dict(tid=0, title='')
         title_regex = re.compile(r'#\s*([^()]+)\(transl_table=(\d+)\)')
-        mat = title_regex.match(text)
+        mat = title_regex.search(text)
         if mat:
             title, tabid = mat.groups()
             ret['tid'] = int(tabid)
