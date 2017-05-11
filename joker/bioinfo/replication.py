@@ -52,7 +52,7 @@ class Transcoder(object):
     @classmethod
     def load(cls, id_):
         try:
-            cls._loaded_transcoders[id_]
+            return cls._loaded_transcoders[id_]
         except KeyError:
             if not cls._loaded_transcoders:
                 cls.load_kb()
