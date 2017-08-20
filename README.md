@@ -1,4 +1,4 @@
-Joker-Bioinfo
--------------
+joker-bioinfo
+=============
 
 Simple bioinfo utils.
