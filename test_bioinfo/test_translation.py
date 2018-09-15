@@ -1,7 +1,7 @@
 
 from __future__ import print_function
 
-from joker.bioinfo.translate import CodonTable
+from joker.bioinfo.translation import CodonTable
 
 
 def remove_whitespaces(s):
