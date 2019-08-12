@@ -2,16 +2,16 @@
 # coding: utf-8
 
 from __future__ import division, print_function
+
 import textwrap
 
-
-SP = ' '
-features_header = "FEATURES{}Location/Qualifiers".format(SP * 12)
+_sp = ' '
+features_header = "FEATURES{}Location/Qualifiers".format(_sp * 12)
 
 
 def fmt_location_line(feature_type, location):
     ft = feature_type
-    line = SP * 5 + ft + SP * (16 - len(ft)) + location
+    line = _sp * 5 + ft + _sp * (16 - len(ft)) + location
     return [line]
 
 
@@ -19,7 +19,7 @@ def fmt_qualifier(key, value):
     splitted_lines = []
     whole_line = '/{}="{}"'.format(key, value)
     for line in textwrap.wrap(whole_line, 58):
-        line = SP * 21 + line
+        line = _sp * 21 + line
         splitted_lines.append(line)
     return splitted_lines
 
@@ -48,7 +48,7 @@ def fmt_gene_cds(headpos, tailpos, qualifiers):
 def fmt_origin_sequence(seq):
     lines = ['ORIGIN']
     for i in range(0, len(seq), 60):
-        line = '{0:>9} '.format(i + 1) + SP.join(textwrap.wrap(seq[i:i + 60], 10))
+        line = '{0:>9} '.format(i + 1) + _sp.join(textwrap.wrap(seq[i:i + 60], 10))
         lines.append(line)
     lines.extend(['//', ''])
     return lines

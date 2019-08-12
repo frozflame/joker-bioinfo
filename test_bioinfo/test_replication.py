@@ -2,6 +2,7 @@
 # coding: utf-8
 
 from __future__ import division, print_function
+
 from joker.bioinfo import revcompl, replication
 from joker.bioinfo.replication import Transcoder
 
